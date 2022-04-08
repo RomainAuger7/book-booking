@@ -1,0 +1,8 @@
+<form [formGroup]="radioForm" (ngSubmit)="onFormSubmit()">
+    <p>
+       <input type="radio" [value]="false" formControlName="onlyAvailable" (change)="changeValue($event)" [ngModel]="false"> All books
+       <input type="radio" [value]="true"  formControlName="onlyAvailable" (change)="changeValue($event)"> Only available books
+    </p>    
+</form>
+<app-booking *ngFor="let book of books" [book]="book" [isConnected]="isConnected"></app-booking>
+

@@ -1,0 +1,18 @@
+<div class="booking-card" >
+    <img src="{{book.cover}}" alt="{{book.title}}" class="booking-card-image">
+    <h2>{{ book.title }}</h2>
+    <p>Author : {{ book.author }}</p>
+    <p>{{ book.description }}</p>
+    <div class="booking-card-available">
+        <div *ngIf="book.available; else AlreadyBooked">
+            <p>Available</p>
+            <button *ngIf="isConnected; else elseLog" class="button-book" (click)="onClick()">To book</button>
+            <ng-template #elseLog>
+                <p>Login for reservation</p>
+            </ng-template>
+        </div>
+        <ng-template #AlreadyBooked>
+            <p >Already Booked</p>
+        </ng-template>
+    </div>
+</div>

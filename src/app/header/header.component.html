@@ -1,0 +1,10 @@
+<nav >
+    <div class="nav-wrapper">
+        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="link-header">Home</a>
+        <a *ngIf="isConnected === false; else elseNav" routerLink="login" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="link-header">Login</a>
+        <ng-template #elseNav>
+            <a (click)="onLogout()" class="link-header">Disconnect</a>
+        </ng-template>
+        <a routerLink="booking" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="link-header">Booking</a>
+    </div>
+</nav>
